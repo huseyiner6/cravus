@@ -1,0 +1,29 @@
+# Node/JS
+node_modules/
+npm-debug.log*
+yarn.lock
+.pnpm-store/
+dist/
+build/
+
+# Expo/React Native
+.expo/
+.expo-shared/
+android/
+ios/
+*.keystore
+*.jks
+
+# macOS/IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Env/Secrets
+.env
+.env.*
+!.env.example
+
+# n8n
+automations/n8n_flows/*_credentials.json
+automations/n8n_flows/*secrets*
