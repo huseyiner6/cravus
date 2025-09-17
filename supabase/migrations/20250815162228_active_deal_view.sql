@@ -1,0 +1,2 @@
+-- placeholder to align local with remote (active_deal_view)
+-- optionally recreate the view here if you want the same DDL locally

@@ -1,0 +1,46 @@
+name: CI
+on:
+  push:
+    branches: [main, develop, seed-public]
+  pull_request:
+
+jobs:
+  node:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Root install
+        if: hashFiles('package.json') != ''
+        run: npm ci || npm i
+
+      - name: Root typecheck
+        if: hashFiles('package.json') != ''
+        run: npm run typecheck --if-present
+
+      - name: Root lint
+        if: hashFiles('package.json') != ''
+        run: npm run lint --if-present
+
+      - name: Mobile install
+        if: hashFiles('apps/mobile/package.json') != ''
+        working-directory: apps/mobile
+        run: npm ci || npm i
+
+      - name: Mobile typecheck
+        if: hashFiles('apps/mobile/package.json') != ''
+        working-directory: apps/mobile
+        run: npm run typecheck --if-present
+
+      - name: Mobile lint
+        if: hashFiles('apps/mobile/package.json') != ''
+        working-directory: apps/mobile
+        run: npm run lint --if-present

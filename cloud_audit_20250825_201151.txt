@@ -1,0 +1,46 @@
+
+== Project ==
+
+Project Ref = noyfdkyzbasxfjwertrt
+API URL     = https://noyfdkyzbasxfjwertrt.supabase.co
+
+== supabase migration list (remote + local) ==
+
+
+== Edge Functions (deployed) ==
+
+
+  
+   ID                                   | NAME           | SLUG           | STATUS | VERSION | UPDATED_AT (UTC)    
+  --------------------------------------|----------------|----------------|--------|---------|---------------------
+   25914a17-781e-475d-9ec7-14edc1d58598 | iap-validate   | iap-validate   | ACTIVE | 5       | 2025-08-18 14:47:17 
+   96c017d3-98a6-4ee1-a761-cdb30e6fd53f | checkin-create | checkin-create | ACTIVE | 12      | 2025-08-24 16:43:10 
+   a0066287-28d7-41e5-afe2-fcf82488ceb9 | checkin-redeem | checkin-redeem | ACTIVE | 8       | 2025-08-24 16:43:10 
+
+
+== Supabase secrets (NAMES ONLY) ==
+
+
+  
+   NAME                          | DIGEST                                                           
+  -------------------------------|------------------------------------------------------------------
+   CHECKIN_COOLDOWN_MIN          | 2abaca4911e68fa9bfbf3482ee797fd5b9045b841fdff7253557c5fe15de6477 
+   CHECKIN_DISTANCE_M            | f369cb89fc627e668987007d121ed1eacdc01db9e28f8bb26f358b7d8c4f08ac 
+   CHECKIN_FREE_LIMIT            | 4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce 
+   CHECKIN_LOG_DEBUG             | fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa 
+   CHECKIN_OTP_DIGITS            | 4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a 
+   CHECKIN_OTP_MINUTES           | ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d 
+   CHECKIN_REQUIRE_SINGLE_ACTIVE | fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa 
+   CHECKIN_SELECT_EARLIEST_END   | b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b 
+   SB_ANON_KEY                   | d2584524b21d12d7a4f8b63e268862a07f41121f85f31e604f760dcc82d05e9b 
+   SB_SERVICE_ROLE_KEY           | 70541e07fd4f900b66e289f5be55c85f9bef1def4924a5b0c518c45ea1688c12 
+   SB_URL                        | 2b9aedb3c07934b67965f10a09f46bfe45fae4f4f013c5d96b9d497f960ec98e 
+   SUPABASE_ANON_KEY             | d2584524b21d12d7a4f8b63e268862a07f41121f85f31e604f760dcc82d05e9b 
+   SUPABASE_DB_URL               | d405c7afdf1b12e6e51e0153460d0c6424dc45a8c3af48f3ccd000d8f3e9c72e 
+   SUPABASE_SERVICE_ROLE_KEY     | f1f4252052dbdf59e63ce0662ac1b140a5b40f47f077d8520589ab128e82b321 
+   SUPABASE_URL                  | 2b9aedb3c07934b67965f10a09f46bfe45fae4f4f013c5d96b9d497f960ec98e 
+
+
+== Dump remote schema to file ==
+
+ERROR: db dump failed

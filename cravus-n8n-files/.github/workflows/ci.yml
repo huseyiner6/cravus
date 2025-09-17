@@ -1,0 +1,59 @@
+name: ci-light
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  sql-and-ts:
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgis/postgis:15-3.4
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U postgres"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Wait for DB
+        run: |
+          for i in {1..30}; do
+            pg_isready -h localhost -U postgres && break
+            sleep 2
+          done
+
+      - name: Prepare database
+        env:
+          PGPASSWORD: postgres
+        run: |
+          psql -h localhost -U postgres -c "create database cravus;"
+          psql -h localhost -U postgres -d cravus -c "create extension if not exists pgcrypto;"
+          psql -h localhost -U postgres -d cravus -c "create extension if not exists postgis;"
+          psql -h localhost -U postgres -d cravus -f supabase/migrations/20250815_125644_init.sql
+
+      - name: Run schema asserts (no pgTAP)
+        env:
+          PGPASSWORD: postgres
+        run: |
+          psql -h localhost -U postgres -d cravus -f tests/sql/schema_asserts.sql
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Typecheck mobile
+        run: |
+          if [ -f package.json ]; then
+            npm ci
+            npx tsc --noEmit
+          else
+            echo "No package.json found, skipping typecheck."
+          fi

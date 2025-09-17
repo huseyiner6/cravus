@@ -1,0 +1,20 @@
+title = "Cravus gitleaks config (placeholders & docs allowlist)"
+
+[allowlist]
+description = "Ignore placeholders and docs; still fail on real secrets"
+paths = [
+  "docs/.*",
+  "automations/n8n_flows/.*",
+  "cravus-n8n-files/.*",
+  "\\.github/workflows/.*",
+  "\\.env\\.example$"
+]
+regexes = [
+  "REDACTED(_NOT_A_REAL_KEY)?",
+  "YOUR_ANON_KEY",
+  "EXPO_PUBLIC_SUPABASE_URL",
+  "EXPO_PUBLIC_SUPABASE_ANON_KEY",
+  # env var names alone are not secrets
+  "SUPABASE_SERVICE_ROLE_KEY",
+  "SUPABASE_JWT_SECRET"
+]

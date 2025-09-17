@@ -1,4 +1,4 @@
 # Architecture
 
 Mobile (Expo RN) → Supabase (Auth, Postgres, RLS, Realtime) → Edge Functions
-Automations via n8n (webhooks, schedulers). Anon key only on client; service role stays private.
+Automations via n8n (webhooks, schedulers). Client uses anon key; service role stays private.

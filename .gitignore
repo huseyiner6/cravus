@@ -27,3 +27,7 @@ ios/
 # n8n
 automations/n8n_flows/*_credentials.json
 automations/n8n_flows/*secrets*
+
+__MACOSX/
+
+__MACOSX/
