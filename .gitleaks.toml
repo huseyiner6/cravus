@@ -1,0 +1,20 @@
+title = "Cravus gitleaks config"
+
+[allowlist]
+description = "Allow placeholders, examples, and docs"
+paths = [
+  "docs/.*",
+  "cravus-n8n-files/.*",
+  "automations/n8n_flows/.*",
+  "\\.github/workflows/.*",
+  "\\.env\\.example$",
+]
+regexes = [
+  "REDACTED(_NOT_A_REAL_KEY)?",
+  "YOUR_ANON_KEY",
+  "EXPO_PUBLIC_SUPABASE_URL",
+  "EXPO_PUBLIC_SUPABASE_ANON_KEY",
+  # env var adlari tek basina secret degildir
+  "SUPABASE_SERVICE_ROLE_KEY",
+  "SUPABASE_JWT_SECRET"
+]
