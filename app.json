@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "name": "Cravus",
+    "slug": "cravus",
+    "scheme": "cravus",
+    "plugins": ["expo-camera"],
+    "ios": {
+      "bundleIdentifier": "com.cravus.stg",
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "We use the camera to scan the venue QR code.",
+        "NSLocationWhenInUseUsageDescription": "We use your location to show nearby off-peak deals."
+      }
+    },
+    "android": {
+      "package": "com.cravus.stg",
+      "permissions": ["android.permission.CAMERA", "android.permission.ACCESS_FINE_LOCATION"]
+    }
+  }
+}

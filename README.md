@@ -1,22 +1,12 @@
-# Cravus — Off-peak Dining & Social Tables
+# Cravus — Sprint-1 App Skeleton
+- IA Tabs: Map · River (placeholder) · Check-in · Activity · Profile
+- Supabase client (`src/lib/supabase/*`) + membership gating + check-in functions
+- Brand theme tokens: `src/theme/brand.ts`
 
-Cross-platform app (Expo React Native + Supabase + n8n) enabling dynamic off-peak discounts and micro social dining events.
-
-## Tech
-- Mobile: Expo/React Native (TS)
-- Backend: Supabase Postgres + RLS, Edge Functions
-- Automations: n8n
-- Infra: GitHub Actions (lint/test), Docker dev utils
-
-## Quickstart
-1) Copy \`.env.example\` to \`.env\` and fill placeholders.
-2) \`cd apps/mobile && npm i && npx expo start\`
-3) Supabase schema: \`db/schema.sql\`
-4) Example n8n flows: \`automations/n8n_flows/\` (secrets redacted).
-
-## Security
-- **No real secrets** in this repo.
-- Use a *private* repo or secret manager for production keys.
-
-## License
-MIT
+## Next
+1) `npm i` ve navigasyon paketlerini ekle:
+   - @react-navigation/native @react-navigation/bottom-tabs
+   - react-native-screens react-native-safe-area-context
+   - @supabase/supabase-js
+2) Expo/Metro ile çalıştır: `npx expo start`
+3) Map ekranındaki "Check in" akışını OTP ekranına bağla ve Paywall screen ekle.
